@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+CSV.foreach(Rails.root.join('lib/defendant_seeds.csv'), headers: true) do |row|
+  defendant = Defendant.create! ({
+    first_name: row[0],
+    last_name: row[1],
+    date_of_birth: row[2],
+  })
+  RepresentationOrder.create! ({
+      defendant_id: defendant.id, 
+      maat_reference: row[3],
+      issued_at: row[4]
+  })
+end
