@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# spec/factories/todos.rb
+# spec/factories/defendants.rb
 FactoryBot.define do
   factory :defendant do
     first_name { Faker::Name.first_name }
