@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Defendant < ApplicationRecord
   has_many :representation_orders
 

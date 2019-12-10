@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RepresentationOrder < ApplicationRecord
   belongs_to :defendant
 
